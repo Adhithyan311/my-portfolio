@@ -27,13 +27,6 @@ export const SkillLinkDemo = () => {
       tag: 'Retailer Access',
       icon: <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
     },
-    {
-      role: 'Admin',
-      email: 'admin123@skillink.com',
-      password: 'admin123',
-      tag: 'Admin Access',
-      icon: <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-    }
   ];
 
   useEffect(() => {
@@ -102,7 +95,7 @@ export const SkillLinkDemo = () => {
         className="w-full md:w-[85%] lg:w-[80%] max-w-5xl mx-auto flex flex-col items-center mt-[-30px] mb-12 px-2 z-20 relative"
       >
         <h3 className="text-base md:text-lg font-medium text-white/90 mb-5 font-mono tracking-wider">Try the Demo</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
           {credentials.map((cred, idx) => (
             <div key={idx} className="bg-[#0f0f0f] border border-white/5 rounded-[16px] p-5 flex flex-col items-start hover:bg-[#141414] hover:border-white/10 transition-colors relative group shadow-lg">
               <div className="flex items-center gap-2 mb-5 w-full justify-between">
@@ -155,6 +148,73 @@ export const SkillLinkDemo = () => {
             </div>
           ))}
         </div>
+
+        {/* Dedicated Admin Portal Access */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="w-full mt-6 bg-[#080808] border border-white/5 hover:border-white/10 transition-colors rounded-[16px] p-6 shadow-lg relative group"
+        >
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6 pb-6 border-b border-white/5">
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center gap-3 mb-2">
+                <svg className="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                <h4 className="text-base md:text-lg font-bold text-white tracking-wide">Admin Portal Access</h4>
+              </div>
+              <p className="text-[10px] text-gray-500 font-mono tracking-widest uppercase">Demo credentials for testing purposes only</p>
+            </div>
+            
+            <a 
+              href="https://skilink-sl.vercel.app/admin-portal" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/20 hover:border-cyan-400/50 transition-all rounded-full text-xs font-mono tracking-widest uppercase flex items-center gap-2 group/btn shrink-0"
+            >
+              Open Admin Dashboard
+              <svg className="w-3.5 h-3.5 transform transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-6 w-full">
+            {/* Email */}
+            <div className="flex items-center justify-between w-full md:w-1/2 group/item bg-white/[0.02] p-4 rounded-xl border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div className="flex flex-col overflow-hidden mr-2">
+                <span className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Admin Email</span>
+                <span className="text-sm font-mono text-gray-300 truncate">admin123@skillink.com</span>
+              </div>
+              <button onClick={() => handleCopy('admin123@skillink.com')} className="text-gray-500 hover:text-white transition-colors p-2 rounded-md hover:bg-white/10 group/btn flex-shrink-0 relative">
+                {copiedText === 'admin123@skillink.com' ? (
+                  <svg className="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                ) : (
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                )}
+                <span className="absolute -top-7 left-1/2 -translate-x-1/2 bg-[#222] text-white text-[9px] px-2 py-1 rounded opacity-0 group-hover/btn:opacity-100 transition-opacity pointer-events-none whitespace-nowrap border border-white/10 shadow-lg">
+                  {copiedText === 'admin123@skillink.com' ? 'Copied!' : 'Copy'}
+                </span>
+              </button>
+            </div>
+            
+            {/* Password */}
+            <div className="flex items-center justify-between w-full md:w-1/2 group/item bg-white/[0.02] p-4 rounded-xl border border-white/5 hover:bg-white/[0.04] transition-colors">
+              <div className="flex flex-col overflow-hidden mr-2">
+                <span className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Admin Password</span>
+                <span className="text-sm font-mono text-gray-300 truncate">admin123</span>
+              </div>
+              <button onClick={() => handleCopy('admin123')} className="text-gray-500 hover:text-white transition-colors p-2 rounded-md hover:bg-white/10 group/btn flex-shrink-0 relative">
+                {copiedText === 'admin123' ? (
+                  <svg className="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                ) : (
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                )}
+                <span className="absolute -top-7 left-1/2 -translate-x-1/2 bg-[#222] text-white text-[9px] px-2 py-1 rounded opacity-0 group-hover/btn:opacity-100 transition-opacity pointer-events-none whitespace-nowrap border border-white/10 shadow-lg">
+                  {copiedText === 'admin123' ? 'Copied!' : 'Copy'}
+                </span>
+              </button>
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
 
       {/* Tech Stack */}
