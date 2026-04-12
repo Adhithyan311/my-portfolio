@@ -79,20 +79,32 @@ export const TerminalHero = () => {
             initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="max-w-3xl"
+            className="flex flex-col md:flex-row items-center md:items-start gap-8 max-w-5xl"
           >
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-2 text-brutal-fg">
-              ADHITHYAN.<span className="text-brutal-muted italic font-mono text-[var(--color-brutal-fg)]">PS</span>
-            </h1>
-            <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-6 text-green-400 drop-shadow-[0_0_6px_rgba(34,197,94,0.4)]">
-              AI Engineer | Machine Learning | NLP | Full-Stack Development
-            </h2>
-            <p className="text-xl md:text-xl text-brutal-muted leading-relaxed font-sans max-w-2xl mb-4 font-bold">
-              Building intelligent systems that solve real-world problems using AI and scalable web technologies.
-            </p>
-            <p className="text-base text-brutal-muted leading-relaxed font-sans max-w-2xl">
-              Final-year B.Tech Computer Science student with a multidisciplinary foundation in Mechanical Engineering and strong expertise in AI-powered full-stack development. Skilled in building intelligent systems using Python (FastAPI), React, and NLP frameworks such as BERT and spaCy. Experienced in developing end-to-end AI solutions including recruitment automation platforms and job recommendation systems, with focus on scalability, system architecture, and Docker-based deployment.
-            </p>
+            {/* Avatar Profile Section */}
+            <div className="relative shrink-0 group mt-2">
+              <div className="absolute inset-0 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-700 pointer-events-none"></div>
+              <img 
+                src="/profile.png" 
+                alt="Adhithyan PS" 
+                className="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-2 border-white/5 shadow-2xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 relative z-10 hover:border-cyan-500/30"
+              />
+            </div>
+
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-2 text-brutal-fg">
+                ADHITHYAN.<span className="text-brutal-muted italic font-mono text-[var(--color-brutal-fg)]">PS</span>
+              </h1>
+              <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-6 text-green-400 drop-shadow-[0_0_6px_rgba(34,197,94,0.4)]">
+                AI Engineer | Machine Learning | NLP | Full-Stack
+              </h2>
+              <p className="text-xl md:text-xl text-brutal-muted leading-relaxed font-sans max-w-2xl mb-4 font-bold">
+                Building intelligent systems that solve real-world problems using AI and scalable web technologies.
+              </p>
+              <p className="text-base text-brutal-muted leading-relaxed font-sans max-w-2xl">
+                Final-year B.Tech Computer Science student with a multidisciplinary foundation in Mechanical Engineering and strong expertise in AI-powered full-stack development. Skilled in building intelligent systems using Python (FastAPI), React, and NLP frameworks such as BERT and spaCy. Experienced in developing end-to-end AI solutions including recruitment automation platforms and job recommendation systems, with focus on scalability, system architecture, and Docker-based deployment.
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
