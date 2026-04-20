@@ -45,7 +45,7 @@ const PROJECTS = [
     title: 'SkillLink',
     subtitle: 'AI Job Recommendation',
     description: 'Built an AI-based job recommendation system using scikit-learn. Developed full-stack application using React, FastAPI, and MongoDB.',
-    keyFeatures: ['Machine Learning Recommendation Matrix', 'Modular Platform Architecture', 'Secure JWT Authentication', 'Robust MongoDB Data Modeling'],
+    keyFeatures: ['Advanced Recommendation Matrix', 'Modular Platform Architecture', 'Secure JWT Authentication', 'Robust MongoDB Data Modeling'],
     tech: ['React', 'FastAPI', 'MongoDB', 'Scikit-learn', 'Tailwind CSS'],
     link: '#skilllink-demo',
     github: '#'

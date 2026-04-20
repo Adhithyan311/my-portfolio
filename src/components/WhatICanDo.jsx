@@ -9,8 +9,8 @@ const LightningIcon = () => (<svg className="w-5 h-5 shrink-0" fill="none" strok
 
 const cards = [
   {
-    title: "Build intelligent AI systems using Machine Learning and NLP",
-    desc: "Built NLP-based resume parsing and job recommendation systems using BERT and spaCy to match user skills with relevant opportunities.",
+    title: "Architect scalable backend systems and intelligent platforms",
+    desc: "Engineered data processing pipelines and backend architectures utilizing Python and modern databases to power seamless, data-driven user experiences.",
     icon: BrainIcon
   },
   {
@@ -39,7 +39,7 @@ const CapabilityCard = ({ title, desc, icon: Icon }) => {
         hidden: { opacity: 0, y: 15 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
       }}
-      className="group relative bg-[#07070a]/80 border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-cyan-500/20 hover:bg-[#0a0c12] hover:-translate-y-1 cursor-default overflow-hidden"
+      className="group relative bg-[#07070a]/80 border border-white/5 rounded-xl p-6 transition-all duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-cyan-500/20 hover:bg-[#0a0c12] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(34,211,238,0.1)] cursor-default overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}
@@ -91,7 +91,7 @@ export const WhatICanDo = () => {
         transition={{ duration: 0.6 }}
         className="text-[#a0a0a5] font-light text-center text-sm md:text-base max-w-2xl mb-12 opacity-80 tracking-wide"
       >
-        I build systems that combine AI with scalable engineering to solve real-world problems.
+        I build robust backend architectures and scalable software to solve complex real-world problems.
       </motion.p>
       
       <motion.div 

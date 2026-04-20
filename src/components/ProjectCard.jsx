@@ -13,7 +13,7 @@ export const ProjectCard = ({ id = 'default', title, subtitle, description, keyF
       <motion.div
         layoutId={`card-container-${id}`}
         onClick={() => setIsOpen(true)}
-        className="group/card relative w-full h-full cursor-pointer flex flex-col rounded-[20px] opacity-100 group-hover/grid:opacity-40 hover:!opacity-100 transition-all duration-500 will-change-transform hover:scale-[1.03] shadow-lg hover:shadow-[0_0_30px_rgba(6,182,212,0.2)]"
+        className="group/card relative w-full h-full cursor-pointer flex flex-col rounded-[20px] opacity-100 group-hover/grid:opacity-40 hover:!opacity-100 transition-all duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-2 hover:scale-[1.02] shadow-lg hover:shadow-[0_15px_40px_rgba(6,182,212,0.15)]"
       >
         {/* Glow border overlay tied to hover */}
         <motion.div

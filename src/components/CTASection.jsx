@@ -77,7 +77,7 @@ export const CTASection = () => {
         <motion.div variants={itemVars} className="flex flex-wrap items-center justify-center gap-4 w-full">
           <a 
             href="mailto:adhithyanps90@gmail.com"
-            className="group px-8 py-3 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-50 font-medium hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]"
+            className="group px-8 py-3 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-50 font-medium hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 hover:scale-[1.05] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(34,211,238,0.25)]"
           >
             Contact Me
           </a>
@@ -86,14 +86,14 @@ export const CTASection = () => {
             href="https://linkedin.com/in/adhithyan-ps-a370a03b6" 
             target="_blank" 
             rel="noreferrer"
-            className="group px-8 py-3 rounded-full bg-white/5 border border-white/10 text-gray-300 font-medium hover:bg-white/10 hover:border-white/20 hover:text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
+            className="group px-8 py-3 rounded-full bg-white/5 border border-white/10 text-gray-300 font-medium hover:bg-white/10 hover:border-white/20 hover:text-white transition-all duration-300 hover:scale-[1.05] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(255,255,255,0.1)]"
           >
             View LinkedIn
           </a>
 
           <a 
             href="#" 
-            className="group px-8 py-3 rounded-full bg-transparent border border-white/5 text-gray-500 font-medium hover:bg-white/5 hover:border-white/10 hover:text-gray-300 transition-all duration-300 hover:scale-[1.02]"
+            className="group px-8 py-3 rounded-full bg-transparent border border-white/5 text-gray-500 font-medium hover:bg-white/5 hover:border-white/10 hover:text-gray-300 transition-all duration-300 hover:scale-[1.05] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(255,255,255,0.05)]"
           >
             Download Resume
           </a>

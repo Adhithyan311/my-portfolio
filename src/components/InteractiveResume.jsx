@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const eduDetails = {
   btech: {
     title: 'B.Tech Computer Science',
-    coursework: ['Data Structures', 'Machine Learning', 'Cloud Computing', 'Database Systems', 'Software Engineering'],
+    coursework: ['Data Structures', 'Backend Architecture', 'Cloud Computing', 'Database Systems', 'Software Engineering'],
     labs: ['AI Lab - Neural Networks', 'Full-Stack Web Dev Lab']
   }
 };
@@ -56,6 +56,8 @@ const MagneticTag = ({ children, onHoverStart, onHoverEnd }) => {
       onMouseEnter={onHoverStart}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: 'spring', stiffness: 200, damping: 15, mass: 0.1 }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
       className="inline-block relative cursor-pointer"
     >
       <motion.span 
@@ -196,6 +198,11 @@ export const InteractiveResume = ({ setSystemLog }) => {
           <div className="relative z-10">
             <h3 className="text-2xl font-bold font-sans mb-6">Areas of Interest</h3>
             <motion.div variants={itemVars} className="flex flex-wrap gap-3">
+              <MagneticTag 
+                onHoverStart={() => setSystemLog("LOG: Primary Focus -> Software Development Engineer (SDE)")}
+              >
+                Software Development Engineer (SDE)
+              </MagneticTag>
               <MagneticTag 
                 onHoverStart={() => {
                   setHoveredInterest('AI');

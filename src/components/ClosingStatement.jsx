@@ -62,7 +62,7 @@ export const ClosingStatement = () => {
 
           <motion.div variants={itemVars} className="flex flex-col items-center mt-2">
             <h3 className="text-xl md:text-3xl font-sans tracking-[0.08em] text-[#e5e5e5] font-medium mb-4 transition-colors duration-300 group-hover:text-[white]">
-              Open to contributing and growing as an AI/ML Engineer.
+              Open to contributing and growing as a Software Development Engineer (SDE).
             </h3>
             
             {/* Underline expanding smoothly from the center outwards */}

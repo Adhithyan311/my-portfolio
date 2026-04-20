@@ -51,7 +51,7 @@ export const SkillLinkDemo = () => {
         className="max-w-3xl text-center mb-16"
       >
         <p className="text-brutal-muted text-sm md:text-base leading-relaxed font-mono">
-          SkillLink is an AI-powered job recommendation platform that intelligently matches student skills with relevant job opportunities using machine learning and smart filtering.
+          SkillLink is an advanced job recommendation platform that intelligently matches student skills with relevant job opportunities using robust backend algorithms and smart filtering.
         </p>
       </motion.div>
 
@@ -225,7 +225,7 @@ export const SkillLinkDemo = () => {
         transition={{ duration: 0.5, delay: 0.3 }}
         className="flex flex-wrap justify-center gap-3 mt-8"
       >
-        {['FastAPI', 'React', 'MongoDB', 'Machine Learning (NLP)'].map((tech, idx) => (
+        {['FastAPI', 'React', 'MongoDB', 'System Architecture'].map((tech, idx) => (
           <span 
             key={idx} 
             className="px-3 py-1 text-xs font-mono uppercase tracking-wider text-brutal-text bg-white/5 border border-white/10 rounded-full select-none"
