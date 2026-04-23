@@ -17,48 +17,48 @@ const getBotResponse = (input) => {
   
   // 2. Confident, direct responses based on core intents
   if (isWhyHire) {
-    return "What makes me different is my ability to bridge experimental Artificial Intelligence with production-ready software engineering. I don't just call LLM APIs—I build scalable model logic into native architectures, ensuring top-tier performance for real-world problems.";
+    return "Adhithyan stands out through his strong problem-solving skills, fast learning ability, and dedication to building efficient software. He approaches challenges logically and is always striving to improve his engineering consistency.";
   }
   if (isStrength) {
-    return "My core strength is solving complex logic problems and architecting intelligent systems from the ground up. Whether it's training NLP models for an AI Resume Builder or orchestrating Docker ecosystems for a Python backend, I focus heavily on scalability and outcome-driven engineering.";
+    return "His core strengths are backend development, creating scalable web applications, and maintaining a disciplined approach to learning new technologies. He is motivated, detail-oriented, and highly adaptable.";
   }
   if (isGoals) {
-    return "My immediate goal is to join an ambitious engineering team where I can architect robust backend services and deliver scalable web products. Ultimately, I want to build systems that directly improve user experiences on a massive scale.";
+    return "He is looking for an opportunity as a Software Engineer where he can contribute to impactful projects, expand his technical expertise, and grow alongside an ambitious team.";
   }
   if (isProject) {
-    return "I've developed highly sophisticated platforms like the **AI Resume Builder**, leveraging automated analysis pipelines for real-time feedback. I also architected **SkillLink**, an intricate job recommendation engine powered by Python and robust database modeling. Both focus heavily on practical user value.";
+    return "Adhithyan has built several structured, placement-ready projects. A highlight is **SkillLink**, an AI-powered job recommendation system utilizing Python, React, and a robust Database Management System (DBMS).";
   }
   if (isSkills) {
-    return "I specialize in fusing AI with full-stack systems. My core stack relies on **Python, FastAPI, and NLP frameworks like spaCy/BERT** on the backend, and **React** for the frontend, all containerized and scaled with **Docker**.";
+    return "His primary skills include **Python**, **Web Development (React, FastAPI)**, and **Database Management Systems (DBMS)**.";
   }
   if (isLeadership) {
-    return "Beyond coding, I serve as the **Company Quarter Master Sergeant (CQMS)** for the National Cadet Corps (NCC). This rigorous role forged my discipline, resource management, and ability to lead and coordinate teams efficiently under pressure.";
+    return "During his time in the **National Cadet Corps (NCC)**, Adhithyan developed strong discipline, leadership, and teamwork skills. He learned how to coordinate teams effectively and handle complex responsibilities.";
   }
   if (isEducation) {
-    return "I'm pursuing my B.Tech in Computer Science at NSS College of Engineering (Class of 2027). Before this, I built a strong analytical and hardware foundation through a Diploma in Mechanical Engineering.";
+    return "Adhithyan is pursuing a B.Tech in Computer Science, continually building upon a solid analytical foundation.";
   }
   if (isContact) {
-    return "You can reach him at adhithyanps90@gmail.com, or drop a message on his LinkedIn profile!";
+    return "You can reach him easily via the Contact section below—feel free to drop him an email or connect on LinkedIn!";
   }
   if (isGreeting) {
-    return "Hello! I am Adhithyan's AI assistant. I'm trained on his portfolio, projects, and thinking workflows. How can I help you today?";
+    return "Hello! I am a professional AI assistant representing Adhithyan. I can tell you about his skills, projects, and background. How can I help you today?";
   }
   
   // 3. Intelligent Fallback Inference
-  const knownTech = ["react", "python", "fastapi", "docker", "api", "backend", "database", "mongodb", "architecture", "javascript"];
+  const knownTech = ["react", "python", "fastapi", "docker", "api", "backend", "database", "mongodb", "architecture", "javascript", "dbms"];
   const mentionedTech = knownTech.find(tech => text.includes(tech));
   
   if (mentionedTech) {
-    return `You mentioned ${mentionedTech}. I have deep, hands-on experience integrating ${mentionedTech} into production environments. For example, my work on SkillLink and the AI Resume Builder extensively relies on these concepts to ensure fast, reliable performance.`;
+    return `You mentioned ${mentionedTech}. Adhithyan has hands-on experience utilizing ${mentionedTech} through his various projects. I recommend checking out the Projects section!`;
   }
   
-  return "That's an interesting question. While my core focus has been heavily concentrated on architecting AI systems and scalable web platforms (like SkillLink), I apply a very logical, fast-learning engineering mindset to any technical challenge. I'd love to discuss this directly with you—feel free to reach out via email!";
+  return "That's an interesting question. I'm still learning and improving in this area. Please feel free to reach out to Adhithyan directly via the Contact section for a more detailed conversation!";
 };
 
 export const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { sender: 'bot', text: 'Hi, I’m Adhithyan’s AI assistant. I can help you explore his work and experience.' }
+    { sender: 'bot', text: 'Hi! I am a professional AI assistant representing Adhithyan. I can tell you about his skills, projects, and background.' }
   ]);
   const [inputVal, setInputVal] = useState('');
   const [isTyping, setIsTyping] = useState(false);

@@ -36,8 +36,8 @@ const CapabilityCard = ({ title, desc, icon: Icon }) => {
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 15 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
       }}
       className="group relative bg-[#07070a]/80 border border-white/5 rounded-xl p-6 transition-all duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-cyan-500/20 hover:bg-[#0a0c12] hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(34,211,238,0.1)] cursor-default overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
@@ -97,7 +97,7 @@ export const WhatICanDo = () => {
       <motion.div 
         variants={{
           hidden: {},
-          visible: { transition: { staggerChildren: 0.15 } }
+          visible: { transition: { staggerChildren: 0.2 } }
         }}
         initial="hidden"
         whileInView="visible"

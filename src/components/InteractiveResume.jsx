@@ -84,6 +84,14 @@ export const InteractiveResume = ({ setSystemLog }) => {
     hidden: { opacity: 0, y: 15 },
     visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 24 } }
   };
+  const leftVars = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }
+  };
+  const rightVars = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }
+  };
 
   const handleModalOpen = (type, data) => {
     setActiveModal({ type, data });
@@ -98,7 +106,7 @@ export const InteractiveResume = ({ setSystemLog }) => {
         className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8"
       >
         {/* Education Column */}
-        <motion.div variants={itemVars}>
+        <motion.div variants={leftVars}>
           <h3 className="text-2xl font-bold font-sans mb-6">Education</h3>
           <div className="space-y-8">
             <motion.div 
@@ -156,7 +164,7 @@ export const InteractiveResume = ({ setSystemLog }) => {
         </motion.div>
         
         {/* Certifications and Interests */}
-        <motion.div variants={itemVars} className="relative mt-8 md:mt-0">
+        <motion.div variants={rightVars} className="relative mt-8 md:mt-0">
           <div className="mb-14">
             <h3 className="text-2xl font-bold font-sans mb-6">Certifications</h3>
             <ul className="space-y-4 relative z-10">

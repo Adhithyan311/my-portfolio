@@ -91,12 +91,7 @@ export const CTASection = () => {
             View LinkedIn
           </a>
 
-          <a 
-            href="#" 
-            className="group px-8 py-3 rounded-full bg-transparent border border-white/5 text-gray-500 font-medium hover:bg-white/5 hover:border-white/10 hover:text-gray-300 transition-all duration-300 hover:scale-[1.05] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(255,255,255,0.05)]"
-          >
-            Download Resume
-          </a>
+          {/* "Download Resume" removed per user request */}
         </motion.div>
 
       </motion.div>

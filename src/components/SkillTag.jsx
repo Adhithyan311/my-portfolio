@@ -7,8 +7,8 @@ export const SkillTag = ({ name, tooltip }) => {
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 20, scale: 0.95 },
-        visible: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 300, damping: 20 } }
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
       }}
       className="relative inline-block m-1"
       onMouseEnter={() => setIsHovered(true)}

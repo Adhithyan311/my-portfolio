@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
-export const MagneticButton = ({ children, className = '', onClick, href }) => {
+export const MagneticButton = ({ children, className = '', onClick, href, target, download }) => {
   const ref = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -31,8 +31,9 @@ export const MagneticButton = ({ children, className = '', onClick, href }) => {
       className={`relative inline-flex items-center justify-center font-mono focus:outline-none ${className}`}
       onClick={onClick}
       href={href}
-      target={href?.startsWith('http') ? '_blank' : undefined}
-      rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+      target={target || (href?.startsWith('http') ? '_blank' : undefined)}
+      rel={target === '_blank' || href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+      download={download}
     >
       {children}
     </Component>

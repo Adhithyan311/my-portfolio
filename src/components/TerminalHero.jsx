@@ -85,13 +85,16 @@ export const TerminalHero = () => {
         ) : (
           <motion.div
             key="readable"
-            initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="flex flex-col md:flex-row items-center md:items-start gap-8 max-w-5xl"
+            className="flex flex-col md:flex-row items-center md:items-start gap-8 max-w-5xl overflow-hidden"
           >
-            {/* Avatar Profile Section */}
-            <div 
+            {/* Avatar Profile Section - Slide from Left */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
               className="relative shrink-0 group mt-2 cursor-pointer"
               onClick={() => setIsModalOpen(true)}
               title="View full image"
@@ -107,9 +110,15 @@ export const TerminalHero = () => {
                 decoding="sync"
                 className="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-2 border-white/5 shadow-2xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 relative z-10 hover:border-cyan-500/30"
               />
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            {/* Text Section - Slide from Right */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              className="flex flex-col items-center md:items-start text-center md:text-left"
+            >
               <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-2 text-brutal-fg">
                 ADHITHYAN.<span className="text-brutal-muted italic font-mono text-[var(--color-brutal-fg)]">PS</span>
               </h1>
@@ -119,10 +128,31 @@ export const TerminalHero = () => {
               <p className="text-xl md:text-xl text-brutal-muted leading-relaxed font-sans max-w-2xl mb-4 font-bold">
                 Building robust backend architectures and scalable web technologies to solve complex real-world problems.
               </p>
-              <p className="text-base text-brutal-muted leading-relaxed font-sans max-w-2xl">
+              <p className="text-base text-brutal-muted leading-relaxed font-sans max-w-2xl mb-8">
                 Final-year B.Tech Computer Science student with a multidisciplinary foundation in Mechanical Engineering and strong expertise in full-stack development. Skilled in building robust web applications using Python (FastAPI), React, and modern databases. Experienced in developing end-to-end solutions including recruitment automation platforms and scalable recommendation systems, with a strong focus on backend architecture, API design, and Docker-based deployment.
               </p>
-            </div>
+              
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+                <a 
+                  href="/resume.pdf" 
+                  download="Adhithyan_Software_Engineer_Resume.pdf"
+                  className="px-6 py-3 bg-green-500/10 hover:bg-green-500/20 text-green-400 border border-green-500/50 rounded-lg font-bold font-mono text-sm tracking-wide transition-all hover:scale-105 hover:shadow-[0_0_15px_rgba(34,197,94,0.3)] flex items-center gap-2"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  DOWNLOAD RESUME
+                </a>
+                
+                <a 
+                  href="/resume.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 bg-white/5 hover:bg-white/10 text-brutal-fg border border-white/20 rounded-lg font-bold font-mono text-sm tracking-wide transition-all hover:scale-105 flex items-center gap-2"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  VIEW RESUME
+                </a>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
